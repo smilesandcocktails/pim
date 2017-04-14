@@ -15,6 +15,12 @@ var dburi = process.env.MONGO_URI
 mongoose.connect(dburi)
 mongoose.Promise = global.Promise
 
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  // we're connected!
+  console.log('REALLY CONNECTED THIS TIME');
+});
 
 app.set('view engine', 'ejs');
 
