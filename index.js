@@ -10,6 +10,7 @@ var flash = require('connect-flash')
 var app = express();
 var isLoggedIn = require('./middleware/isLoggedIn')
 var path = require('path')
+var MongoStore = require('connect-mongo')(session)
 
 var dburi = process.env.MONGO_URI
 mongoose.connect(dburi)
@@ -27,8 +28,10 @@ app.set('view engine', 'ejs');
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: true,
+  store: new MongoStore({url: process.env.MONGO_URI})
 }))
+
 app.use(passport.initialize());
 app.use(passport.session())
 app.use(flash())
