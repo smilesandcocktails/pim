@@ -1,0 +1,53 @@
+html {
+  /*background-color: orange;*/
+  background-image: url('https://static.pexels.com/photos/94287/pexels-photo-94287.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+}
+.floor {
+  display: inline-block
+}
+.stack {
+  display: inline-block
+}
+
+.radioButton {
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2%;
+  width: 100%;
+  font-size: 150%;
+}
+
+.pageTitle {
+  text-decoration: none;
+  color: white;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  background-color: transparent;
+  color: white;
+  font-size: 90%;
+}
